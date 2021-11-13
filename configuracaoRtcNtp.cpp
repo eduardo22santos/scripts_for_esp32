@@ -74,8 +74,8 @@ void aturalizarRelogio()
             if (WiFi.status()==WL_CONNECTED)
             {
                 Serial.println("Ok, conectado!");
-	            Serial.print("Endereco IP: ");
-                display.println(WiFi.localIP());
+	        Serial.print("Endereco IP: ");
+                Serial.println(WiFi.localIP());
             }else
             {
                 do
@@ -102,11 +102,7 @@ void aturalizarRelogio()
                 n = FechaNTP.substring(14, 16).toInt();
                 s = FechaNTP.substring(17, 19).toInt();
                 relogio.adjust(DateTime(a, m, d, h, n, s));
-                display.clearDisplay();
-                display.setCursor(0,40);
-                display.print("SUCESSO!");
-                display.display();
-                vTaskDelay(1000/ portTICK_PERIOD_MS);
+                   
                 ESP.restart();
             }
 }
