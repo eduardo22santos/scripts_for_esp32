@@ -1,3 +1,8 @@
+/**
+* Esse script mostra como usar o rtc ds3231
+* e fazer sua atualização utilizando o NTP
+*/
+
 #include <Arduino.h>
 #include <Wire.h>
 #include <WiFi.h>
